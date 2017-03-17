@@ -13,6 +13,7 @@
 		39E267BF1E7BAF42007FF885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E267BD1E7BAF42007FF885 /* Main.storyboard */; };
 		39E267C11E7BAF42007FF885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E267C01E7BAF42007FF885 /* Assets.xcassets */; };
 		39E267C41E7BAF42007FF885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E267C21E7BAF42007FF885 /* LaunchScreen.storyboard */; };
+		39E267CC1E7BD2A2007FF885 /* stig.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39E267CB1E7BD2A2007FF885 /* stig.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		39E267C01E7BAF42007FF885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E267C31E7BAF42007FF885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39E267C51E7BAF42007FF885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39E267CB1E7BD2A2007FF885 /* stig.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stig.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				39E267B81E7BAF42007FF885 /* AppDelegate.m */,
 				39E267BA1E7BAF42007FF885 /* ViewController.h */,
 				39E267BB1E7BAF42007FF885 /* ViewController.m */,
+				39E267CB1E7BD2A2007FF885 /* stig.jpg */,
 				39E267BD1E7BAF42007FF885 /* Main.storyboard */,
 				39E267C01E7BAF42007FF885 /* Assets.xcassets */,
 				39E267C21E7BAF42007FF885 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E267CC1E7BD2A2007FF885 /* stig.jpg in Resources */,
 				39E267C41E7BAF42007FF885 /* LaunchScreen.storyboard in Resources */,
 				39E267C11E7BAF42007FF885 /* Assets.xcassets in Resources */,
 				39E267BF1E7BAF42007FF885 /* Main.storyboard in Resources */,
@@ -262,6 +266,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScrollCard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jam.studio.ScrollCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,6 +278,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScrollCard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jam.studio.ScrollCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
