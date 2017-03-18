@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39D220AA1E7C42140071F85E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39D220A91E7C42140071F85E /* Default-568h@2x.png */; };
 		39E267B61E7BAF42007FF885 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E267B51E7BAF42007FF885 /* main.m */; };
 		39E267B91E7BAF42007FF885 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E267B81E7BAF42007FF885 /* AppDelegate.m */; };
 		39E267BC1E7BAF42007FF885 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E267BB1E7BAF42007FF885 /* ViewController.m */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39D220A91E7C42140071F85E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		39E267B11E7BAF42007FF885 /* ScrollCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E267B51E7BAF42007FF885 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39E267B71E7BAF42007FF885 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		39E267A81E7BAF42007FF885 = {
 			isa = PBXGroup;
 			children = (
+				39D220A91E7C42140071F85E /* Default-568h@2x.png */,
 				39E267B31E7BAF42007FF885 /* ScrollCard */,
 				39E267B21E7BAF42007FF885 /* Products */,
 			);
@@ -142,6 +145,7 @@
 				39E267CC1E7BD2A2007FF885 /* stig.jpg in Resources */,
 				39E267C41E7BAF42007FF885 /* LaunchScreen.storyboard in Resources */,
 				39E267C11E7BAF42007FF885 /* Assets.xcassets in Resources */,
+				39D220AA1E7C42140071F85E /* Default-568h@2x.png in Resources */,
 				39E267BF1E7BAF42007FF885 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +308,7 @@
 				39E267CA1E7BAF42007FF885 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

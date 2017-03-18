@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 const NSInteger myTag=100;
+const CGFloat minScale=0.7;
 
 @interface ViewController ()<UIScrollViewDelegate>
 {
@@ -29,7 +30,7 @@ const NSInteger myTag=100;
     
     int count=20;
     for (int i=0; i<count; i++) {
-        UIImageView* vi=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, _scrollView.frame.size.width*0.6, _scrollView.frame.size.height*0.8)];
+        UIImageView* vi=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, _scrollView.frame.size.width*0.6, _scrollView.frame.size.height*0.7)];
         vi.tag=myTag;
         vi.backgroundColor=[UIColor colorWithHue:(arc4random()%255)/255.0 saturation:1 brightness:1 alpha:1];
         [_scrollView addSubview:vi];
@@ -37,7 +38,7 @@ const NSInteger myTag=100;
         vi.layer.borderWidth=1;
         vi.image=[UIImage imageNamed:@"stig.jpg"];
         
-        UIView* cen=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 4, 4)];
+        UIView* cen=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 1, 1)];
         cen.backgroundColor=[UIColor blackColor];
         cen.center=CGPointMake(vi.frame.size.width/2, vi.frame.size.height/2);
         [vi addSubview:cen];
@@ -47,7 +48,7 @@ const NSInteger myTag=100;
 //        [vi addSubview:imgV];
 //        
         UILabel* lab=[[UILabel alloc]initWithFrame:CGRectMake(120, 10, 100, 20)];
-        lab.backgroundColor=[UIColor yellowColor];
+        lab.backgroundColor=[vi backgroundColor];
         lab.text=[NSString stringWithFormat:@"%d",(int)i];
         [vi addSubview:lab];
     }
@@ -59,30 +60,13 @@ const NSInteger myTag=100;
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-//    CGFloat offX=scrollView.contentOffset.x;
-//    CGFloat halfW=0.5*scrollView.frame.size.width;
-//    NSInteger numberOfPage=offX/scrollView.frame.size.width;
-//    CGFloat offCenterX=offX+halfW;
-//    NSArray* subViews=scrollView.subviews;
-//    NSMutableArray* views10=[NSMutableArray array];
-//    for (UIView* vi in subViews) {
-//        if (vi.tag==myTag) {
-//            CGFloat scale=0.5;
-//            CGFloat dx=fabs(vi.center.x-offCenterX);
-//            if (dx<=halfW) {
-//                scale=1.0-0.5*dx/halfW;
-//            }
-//            CGAffineTransform transform=CGAffineTransformMakeScale(scale, scale);
-//            vi.transform=transform;
-//        }
-//    }
-    
-    
+{    
     CGFloat offX=scrollView.contentOffset.x;
     CGFloat halfW=0.5*scrollView.frame.size.width;
     NSInteger numberOfPage=(offX+halfW)/scrollView.frame.size.width;
     CGFloat offCenterX=offX+halfW;
+    
+    CGFloat distance=0.55*scrollView.frame.size.width;
     
     NSArray* subViews=scrollView.subviews;
     NSMutableArray* views10=[NSMutableArray array];
@@ -93,7 +77,6 @@ const NSInteger myTag=100;
         }
     }
     for (UIView* vi in views10) {
-        vi.transform=CGAffineTransformMakeScale(1, 1);
         vi.center=CGPointMake(-1000,-1000);
     }
     
@@ -103,24 +86,24 @@ const NSInteger myTag=100;
     
     CGFloat contentCenterX=numberOfPage*scrollView.frame.size.width+halfW;
     
-    CGFloat newContentCenterX=offCenterX-((offCenterX-contentCenterX)*(centerView.frame.size.width/scrollView.frame.size.width));
-    
-    CGFloat minScale=0.7;
+    CGFloat newContentCenterX=offCenterX-((offCenterX-contentCenterX)*(distance/scrollView.frame.size.width));
     
     CGFloat centerY=scrollView.frame.size.height/2;
     
     centerView.center=CGPointMake(newContentCenterX, centerY);
-    leftView.center=CGPointMake(newContentCenterX-leftView.frame.size.width*0.5-centerView.frame.size.width*0.5, centerY);
-    rightView.center=CGPointMake(newContentCenterX+rightView.frame.size.width*0.5+centerView.frame.size.width*0.5, centerY);
+    leftView.center=CGPointMake(newContentCenterX-distance, centerY);
+    rightView.center=CGPointMake(newContentCenterX+distance, centerY);
     
     for (UIView* vi in views10) {
-        CGFloat scale=minScale;
-        CGFloat hw=vi.frame.size.width;
-        CGFloat dx=fabs(vi.center.x-offCenterX);
-        CGFloat rate=dx/hw;
-        scale=1.0-(1-scale)*rate;
-        CGAffineTransform transform=CGAffineTransformMakeScale(scale, scale);
-        vi.transform=transform;
+        if (vi==centerView||vi==leftView||vi==rightView) {
+            CGFloat scale=minScale;
+            CGFloat hw=distance;
+            CGFloat dx=fabs(vi.center.x-offCenterX);
+            CGFloat rate=dx/hw;
+            scale=1.0-(1-scale)*rate;
+            CGAffineTransform transform=CGAffineTransformMakeScale(scale, scale);
+            vi.transform=transform;
+        }
     }
 }
 
